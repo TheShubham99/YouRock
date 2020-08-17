@@ -1,5 +1,6 @@
 name: yourock-appreciator
-desc: Sends an email to the contributor with an open-cv processed personalized avatar image of the contributor.
+description: Sends an email to the contributor with an open-cv processed personalized avatar image of the contributor.
+author: 'Prathamesh Sahasrabhojane
 
 on:
   issues:
