@@ -49,4 +49,4 @@ jobs:
       #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #    ORG: ${{ github.event.repository.owner.name }}
 
-      - run: "echo 'latest release: ${{ github.actor.login }}'"
+      - run: "echo 'latest release: ${{ process.env.GITHUB_ACTOR }}'"
