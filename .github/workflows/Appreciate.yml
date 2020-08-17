@@ -38,13 +38,14 @@ jobs:
         id: start_sending
         with:
           query: |
-            query send{
-              viewer{
-                login
-                avatarUrl
-              }
-              }
+            query send($user){
+              user(login:$user){
+              avatarUrl
+                }
+               }
+          user: ${{ github.event.actor.login }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG: ${{ github.event.repository.owner.name }}
 
       - run: "echo 'latest release: ${{ steps.start_sending.outputs.data }}'"
