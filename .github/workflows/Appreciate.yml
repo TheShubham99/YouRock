@@ -9,6 +9,9 @@ on:
   pull_request:
     branches:
       - master
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -30,9 +33,6 @@ jobs:
       #     pip install smtp
       #     pip install pillow
       #     pip install numpy
-      - name: Send Email
-        run: |
-          python actions/main.py
 
       - uses: octokit/graphql-action@v2.x
         id: start_sending
@@ -40,13 +40,18 @@ jobs:
           query: |
             query send($login:String!){
               user(login:$login){
+                  login
                   avatarUrl
+                  email
                 }
               }
 
           login: ${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG: ${{ github.event.repository.owner.name }}
+          ORG: ${{ github.repository.name }}
 
-      - run: "echo 'latest release: ${{steps.start_sending.outputs.data.user.avatarUrl}}'"
+      - name: Send Email
+        run: |
+          python actions/main.py '${{steps.start_sending.outputs.data}}' '${{github.env.ORG}}'
+      #- run: "echo 'latest release: ${{fromJSON(steps.start_sending.outputs.data)}}'"
