@@ -34,19 +34,19 @@ jobs:
         run: |
           python actions/main.py
 
-      # - uses: octokit/graphql-action@v2.x
-      #   id: start_sending
-      #   with:
-      #     query: |
-      #       query send($login:){
-      #         user(login:$login){
-      #             avatarUrl
-      #           }
-      #          }
+      - uses: octokit/graphql-action@v2.x
+        id: start_sending
+        with:
+          query: |
+            query send($login:String!){
+              user(login:$login){
+                  avatarUrl
+                }
+              }
 
-      #    login: ${{ github.actor.login }}
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #    ORG: ${{ github.event.repository.owner.name }}
+          login: ${{ github.actor }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG: ${{ github.event.repository.owner.name }}
 
-      - run: "echo 'latest release: ${{ GITHUB_ACTOR }}'"
+      - run: "echo 'latest release: ${{steps.start_sending.outputs.data.user.avatarUrl}}'"
