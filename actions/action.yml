@@ -1,0 +1,4 @@
+name: 'Personalizing Email'
+runs:
+  using: 'python 3'
+  main: './main.py'

@@ -30,5 +30,4 @@ jobs:
         pip install pillow
         pip install numpy
     - name: Send Email
-      run: |
-        python -V
+        uses: ./actions
