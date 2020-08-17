@@ -1,4 +1,5 @@
-name: YouRock
+name: yourock-appreciator
+desc: A personalized contribution appreciator, It sends an email to the contributor with a open-cv processed personalized avtar image of the contributor.
 
 on:
   issues:
