@@ -44,7 +44,7 @@ jobs:
                 }
                }
 
-          login: ${{ github.event.actor.login }}
+          login: ${{ github.actor.login }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORG: ${{ github.event.repository.owner.name }}
