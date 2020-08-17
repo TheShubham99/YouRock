@@ -12,6 +12,9 @@ on:
 
 jobs:
   deploy:
+    env:
+      GKEY: ${{ secrets.GKEY }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +33,16 @@ jobs:
       - name: Send Email
         run: |
           python actions/main.py
+
+      - uses: octokit/graphql-action@v2.x
+        id: start_sending
+        with:
+          query: |
+            query send{
+              viewer{
+                login
+                avatarUrl
+              }
+              }
+
+      - run: "echo 'latest release: ${{ steps.start_sending.outputs.data }}'"
