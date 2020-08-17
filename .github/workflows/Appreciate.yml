@@ -38,12 +38,13 @@ jobs:
         id: start_sending
         with:
           query: |
-            query send($user){
-              user(login:$user){
-              avatarUrl
+            query send($login:String!){
+              user(login:$login){
+                  avatarUrl
                 }
                }
-          user: ${{ github.event.actor.login }}
+
+          login: ${{ github.event.actor.login }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORG: ${{ github.event.repository.owner.name }}
