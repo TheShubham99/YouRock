@@ -26,13 +26,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      # - name: Install dependencies
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install opencv-python
-      #     pip install smtp
-      #     pip install pillow
-      #     pip install numpy
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install opencv-python
+          pip install smtp
+          pip install pillow
+          pip install numpy
 
       - uses: octokit/graphql-action@v2.x
         id: start_sending
@@ -53,5 +53,5 @@ jobs:
 
       - name: Send Email
         run: |
-          python actions/main.py '${{steps.start_sending.outputs.data}}' '${{github.env.ORG}}'
+          python ./Rock.py '${{steps.start_sending.outputs.data}}' '${{github.env.ORG}}'
       #- run: "echo 'latest release: ${{fromJSON(steps.start_sending.outputs.data)}}'"
