@@ -15,6 +15,7 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from urllib.request import urlopen
 import numpy as np
+import os
 
 parsed_json=json.loads(sys.argv[1])
 
@@ -28,7 +29,7 @@ html = urlopen(image_url)
 img_array = np.array(bytearray(html.read()), dtype=np.uint8)
 background = cv2.imdecode(img_array, -1)
 
-org=sys.argv[2]
+org=str(sys.argv[2])
 maskPath = 'glasses.png'
 cascPath = "haarcascade_frontalface_default.xml"
 
@@ -63,7 +64,7 @@ for (x, y, w, h) in faces:
 
 sender_email = "yourockopensource@gmail.com"
 rec_email = email
-password = input(str("Please enter your password : "))
+password = str(os.environ['GKEY'])
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()

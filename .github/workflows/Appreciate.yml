@@ -1,15 +1,9 @@
-# This workflows will upload a Python Package using Twine when a release is created
-# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
-
-name: Upload Python Package
+name: YouRock
 
 on:
   issues:
-    types: [opened, closed]
+    types: opened
   pull_request:
-    branches:
-      - master
-  push:
     branches:
       - master
 
@@ -49,9 +43,9 @@ jobs:
           login: ${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORG: ${{ github.repository.name }}
+          #ORG: ${{ github.repository }}
 
       - name: Send Email
         run: |
-          python ./Rock.py '${{steps.start_sending.outputs.data}}' '${{github.env.ORG}}'
+          python ./Rock.py '${{steps.start_sending.outputs.data}}' '${{github.repository}}'
       #- run: "echo 'latest release: ${{fromJSON(steps.start_sending.outputs.data)}}'"
