@@ -44,5 +44,7 @@ jobs:
                 avatarUrl
               }
               }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: "echo 'latest release: ${{ steps.start_sending.outputs.data }}'"
