@@ -1,6 +1,9 @@
 name: 'yourock-appreciator'
 description: 'Sends an email to the contributor with an open-cv processed personalized avatar image of the contributor.'
 author: 'Prathamesh Sahasrabhojane'
+branding:
+  icon: 'award'
+  color: 'black'
 
 on:
   issues:
@@ -45,9 +48,7 @@ jobs:
           login: ${{ github.actor }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #ORG: ${{ github.repository }}
 
       - name: Send Email
         run: |
           python ./Rock.py '${{steps.start_sending.outputs.data}}' '${{github.repository}}'
-      #- run: "echo 'latest release: ${{fromJSON(steps.start_sending.outputs.data)}}'"
