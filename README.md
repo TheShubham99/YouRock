@@ -1,4 +1,5 @@
 <h1 align="center">You Rock - A Personalized Contribution Appreciator.</h1>
+
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 # What it does?
