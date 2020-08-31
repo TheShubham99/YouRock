@@ -10,9 +10,14 @@ Sends out a personalized email appreciating the contribution with some **Badges*
 
 This action will help :hash: **maintainers** to improve the `outreach` and Public Relations.
 
+# What it looks like?
+
+![](https://trello-attachments.s3.amazonaws.com/5f4c8eb8cd675c6f5dd4dc70/597x289/d295b59b0983b6853abffb00fc634440/YouRockEmail.gif)
+
 # How to test?
 
-Just open a new issue on this [YouRock](https://github.com/TheShubham99/YouRock) Repo.
+1. Just open a new issue on this [YouRock](https://github.com/TheShubham99/YouRock) Repo.
+2. You'll receive a personalized email (email account linked to your **Github**)
 
 ![](./YouRockDemo.gif)
 
@@ -61,6 +66,7 @@ The default triggering conditions are -
 2.  Pull Request - Opened
 
 You can change the job triggers according to your need.
+
 [Learn More about the syntax for actions here.](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
 # Drop a ⭐ if you like it :)
