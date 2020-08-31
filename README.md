@@ -18,22 +18,25 @@ Just open a new issue on this [YouRock](https://github.com/TheShubham99/YouRock)
 
 # How to use it in your repo?
 
-1. Clone the repo.
-2. Copy the repository contents to your repo where you wish to add the **Appreciator** (you can skip `.pdf`,`YouRockDemo.gif` and `me.jpg`)
+1. Clone the repository.
+2. Copy the repository contents to your repository where you wish to add the **Appreciator** (you can skip `.pdf`,`YouRockDemo.gif` and `me.jpg`)
 
 # Setup Email Sending Account
 
 1. Create a new gmail account for sending the emails.
 2. Authorize Gmail to send automated emails via this tool https://myaccount.google.com/lesssecureapps
+
+![](https://docs.bitnami.com/images/img/apps/common/google-security.png)
+
 3. - Replace the `senders_email` in `Rock.py` with your newly created `email address` (on line 65)
-   - Replace the `msg['From']=x` with your email display name.
+   - Replace the `msg['From']` value with your email display name.
 
 4. Create a [Github Secret](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) Called `GKEY` and add your gmail password to it.
 
 # Setting up the action
 
 1. Make sure your repository contains all the necessary files present in this repository.
-2. Click on Actions and create a action.
+2. Click on Actions and `create an action`.
    ![](https://docs.github.com/assets/images/help/repository/actions-tab.png)
 
 3. Add code in `Appreciate.yml` to your workflow `yml` file.
@@ -60,4 +63,4 @@ The default triggering conditions are -
 You can change the job triggers according to your need.
 [Learn More about the syntax for actions here.](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 
-# Drop a :star if you like it :)
+# Drop a ⭐ if you like it :)
