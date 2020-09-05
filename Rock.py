@@ -96,6 +96,5 @@ with open('gold.png', 'rb') as fp:
 
 
 server.login(sender_email, password)
-print("Login success")
 server.sendmail(sender_email, rec_email, msg.as_string())
-print("Email has been sent to ", rec_email)
+print("Email has been sent")
