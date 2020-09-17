@@ -16,6 +16,8 @@ This action will help :hash: **maintainers** to improve the `outreach` and Publi
 
 # How to test?
 
+<center><img src="Note.png" width="900"></img></center>
+
 1. Just open a new issue on this [YouRock](https://github.com/TheShubham99/YouRock) Repo.
 2. You'll receive a personalized email (email account linked to your **Github**)
 
