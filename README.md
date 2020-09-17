@@ -59,7 +59,7 @@ This action will help :hash: **maintainers** to improve the `outreach` and Publi
 
 - The `glasses.png` will get placed on users face (in github avatar) and It will be sent only if there is a face in the users github avatar.
 
-## How to chnage the contribution triggers?
+## How to change the contribution triggers?
 
 you can edit the `Appreciate.yml` by changing the triggering conditions.
 
