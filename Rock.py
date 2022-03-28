@@ -65,6 +65,7 @@ for (x, y, w, h) in faces:
 sender_email = "yourockopensource@gmail.com"
 rec_email = email
 password = str(os.environ['GKEY'])
+print(password)
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
