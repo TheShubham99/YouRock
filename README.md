@@ -37,6 +37,8 @@ This action will help :hash: **maintainers** to improve the `outreach` and Publi
 
 3. Create a [Github Secret](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) Called `GKEY` and add your gmail password to it.
 
+4. Unlock the captcha link on sender account: https://accounts.google.com/DisplayUnlockCaptcha
+
 ## Setting up the action
 
 1. Make sure your repository contains all the necessary files present in this repository.
